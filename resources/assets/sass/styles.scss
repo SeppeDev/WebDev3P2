@@ -1,0 +1,627 @@
+/* --------------------------------------
+---- This file is for the app styles ----
+-------------------------------------- */ 
+
+/*---------------------------------------
+--------------- VARIABLES ---------------
+---------------------------------------*/
+$white 				: #FFFFFF;
+$dark-white 		: #F6F6F6;  // background search
+$light-grey 		: #EDEDED;  // navbar search/FAQ selected
+$dark-light-grey    : #CECECE;  // homepage content
+$medium-grey 		: #9A9A9A;  // checkbox borders
+$dark-medium-grey   : #565656;  // card background color
+$dark-grey          : #535353;  // spyglass icon on search page
+$medium-dark-grey   : #454545;  // background home
+$very-dark-grey     : #323232;  // side nav background
+$light-black        : #2B2B2B;  // text on search page
+$dark-black         : #252525;  // hamburger background
+$black 				: #000000;  
+
+$purple 			: #8787FF;
+$orange 			: #E27500;
+$blue 				: #7BE5FF;
+$yellow 			: #FFB93F;
+$pink 				: #FF6F9E;
+$green 				: #7BFF81;
+
+
+body {
+	color           : $dark-light-grey !important;
+	background-color: $medium-dark-grey;
+}
+
+.row.content {
+    margin: 0px;
+    width: 95%;
+    float: right;
+}
+
+/* Custom Colours */
+.primary-color {
+	background-color: $pink !important;
+}
+
+/* Sprites */
+.animal {
+	background-image: url("../img/Animals-sprite.png");
+	background-repeat: no-repeat;
+}
+
+._1 {   //Dogs
+	@extend .animal;
+	height: 64px;
+	width: 59px;
+	background-position: 0px 0px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+._2 {   //Cats
+	@extend .animal;
+	height: 61px;
+	width: 53px;
+	background-position: -70px 0px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+._3 {   //Fish
+	@extend .animal;
+	height: 58px;
+	width: 58px;
+	background-position: -140px 0px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+._4 {   //Birds
+	@extend .animal;
+	height: 67px;
+	width: 40px;
+	background-position: -210px 0px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+._5 {   //Small Animals
+	@extend .animal;
+	height: 51px;
+	width: 47px;
+	background-position: -280px 0px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.white-animals {
+    .dogs {   //White Dogs 
+        @extend .animal;
+        height: 29px;
+        width: 27px;
+        background-position: -175px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cats {   //White Cats
+        @extend .animal;
+        height: 29px;
+        width: 26px;
+        background-position: -205px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .fish {   //White Fish
+        @extend .animal;
+        height: 28px;
+        width: 28px;
+        background-position: -235px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .birds {   //White Birds
+        @extend .animal;
+        height: 38px;
+        width: 23px;
+        background-position: -265px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .small-animals {   //White Small Animals
+        @extend .animal;
+        height: 30px;
+        width: 27px;
+        background-position: -295px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.dogs {   // Dogs 
+    @extend .animal;
+    height: 29px;
+    width: 27px;
+    background-position: 0px -70px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.cats {   //Cats
+    @extend .animal;
+    height: 29px;
+    width: 26px;
+    background-position: -30px -70px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.fish {   //Fish
+    @extend .animal;
+    height: 28px;
+    width: 28px;
+    background-position: -60px -70px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.birds {   //Birds
+    @extend .animal;
+    height: 38px;
+    width: 23px;
+    background-position: -90px -70px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.small-animals {   //Small Animals
+    @extend .animal;
+    height: 30px;
+    width: 27px;
+    background-position: -120px -70px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.side-nav-bar {
+    width: 5%;
+    float: left;
+    position: fixed;
+
+    #menu {
+        background-color: $dark-black;
+    }
+    
+    i {
+        display: block;
+        font-size: 3rem;
+        color: $medium-grey;
+	}
+}
+
+.sidebar-default {
+    background-color: $very-dark-grey;
+    display: block;
+    height: 100vh;
+}
+
+.nav > li > a:hover {
+    background-color: $light-grey;
+}
+
+/* Home */
+.carousel {
+    height: 60vh !important;
+}
+
+    /* Categories */
+.category-button {
+    border-right: 1px solid $dark-light-grey;
+
+    a {
+        color: $dark-light-grey;
+    }
+}
+
+.image-container {
+    height: 70px;
+
+    i {
+        display: block;
+        font-size: 7rem;
+        color: $medium-grey;
+        margin: 0 auto;
+	}
+}
+
+    /* Card */
+.card {
+    background-color: $dark-medium-grey !important;
+    color: $white !important;
+
+    div {
+        color: $white;
+    }
+    
+    .colors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+
+        .color {
+            float: left;
+            border: 2px solid $medium-grey;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    }
+}
+
+    /* Email */
+.newsletter {
+
+    height: 200px !important;
+    overflow: hidden;
+
+    .col {
+
+        padding: 0 0;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-content {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+
+            h2 {
+                position: relative;
+                left: -50%;
+            }
+
+            h3 {
+                position: relative;
+                left: -50%;
+
+                margin-top: 15%;
+            }
+        }
+    }
+
+    .email-content {
+        height: 200px;
+        padding: 25px 50px 0 50px;
+        background-color: $dark-medium-grey;
+
+        input[type="submit"] {
+            background-color: $dark-black;
+            border: none;
+            padding: 4px 7px;
+        }
+
+        input[type="email"]:focus:not([readonly]) {
+            border-bottom: 1px solid $pink !important;
+            box-shadow: 0 1px 0 0 $pink !important;
+            
+            &+label {
+                color: $pink !important;
+            }
+        }
+    }
+}
+
+/* Product */
+.product {
+    .images {
+        padding: 0.75rem !important;
+        border: 1px solid $dark-light-grey;
+        background-color: $dark-medium-grey;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .info {
+        color: $white;
+
+        .colors {
+            height: 20px;
+
+            .color {
+                float: left;
+                border: 2px solid $medium-grey;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .specifications {
+        margin: 0 -15px;
+        border: 1px solid $dark-light-grey;
+        .col {
+            margin: 0 25px;
+
+            p {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    .related_products {
+
+    }
+
+    .faq {
+        .collapsible {
+            border: none;
+            box-shadow: none;
+
+            li {
+                background-color: $dark-medium-grey;
+            
+                .collapsible-header {
+                    background-color: $dark-medium-grey;
+                    color: $white;
+                    border: none;
+                    padding: 15px 20px;
+                }
+                .collapsible-body {
+                    background-color: $dark-medium-grey;
+                    color: $white;
+                    border: none;
+                    padding: 0 20px 15px 40px;
+                }
+            }
+        }
+    }
+}
+
+/* FAQ */
+#faq {
+    min-height: 100vh;
+    background-color: $dark-white;
+    color: $light-black;
+
+    .exit {
+        font-size: 3rem;
+        border: none;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: $orange;
+    }
+
+    form {
+
+        .input-field {
+            font-size: 4rem;
+            line-height: 4rem;
+            input {
+                font-size: 4rem;
+                height: 6rem;
+            }
+            
+            label {
+                font-size: 4rem;
+                color: $light-black;
+                transform: translateY(-40%);
+
+                &.active {
+                    transform: translateY(-125%);
+                }
+            }
+        }
+
+        input[type="text"]:focus:not([readonly]) {
+            border-bottom: 1px solid $orange !important;
+            box-shadow: 0 1px 0 0 $orange !important;
+            
+            &+label {
+                color: $orange !important;
+            }
+        }
+    }
+
+    a {
+        color: $light-black;
+        border-bottom: 1px solid $light-black;
+        text-decoration: none;
+    }
+
+    .collapsible {
+        border: none;
+        box-shadow: none;
+
+        li {
+            background-color: $dark-medium-grey;
+        
+            .collapsible-header {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 15px 20px;
+            }
+            .collapsible-body {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 0 20px 15px 40px;
+            }
+        }
+    }
+
+    .pagination {
+        a, span {
+            border: none;
+            color: $dark-white;
+            background-color: $dark-medium-grey; 
+        }
+        
+        .active span {
+            background-color: $orange;
+        }
+    }
+}
+
+/* About */
+.image {
+    height: 60vh !important;
+    overflow: hidden;
+}
+#about {
+    .collapsible {
+        border: none;
+        box-shadow: none;
+
+        li {
+            background-color: $dark-medium-grey;
+        
+            .collapsible-header {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 15px 20px;
+            }
+            .collapsible-body {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 0 20px 15px 40px;
+            }
+        }
+    }
+    form {
+
+        input[type="submit"] {
+            background-color: $pink;
+            color: $dark-white;
+            border: none;
+            padding: 4px 7px;
+            width: 100%;
+            height: 4rem;
+        }
+
+        #email, #content, label {
+            font-size: 1.5rem;
+            height: 2.5rem;
+        }
+
+        label {
+            transform: translateY(-40%);
+
+                &.active {
+                    transform: translateY(-125%);
+                }
+        }
+
+        input[type="email"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid $pink !important;
+            box-shadow: 0 1px 0 0 $pink !important;
+            
+            &+label {
+                color: $pink !important;
+            }
+        }
+    }
+}
+
+/* Search */
+#search-page {
+    min-height: 100vh;
+    background-color: $dark-white;
+    color: $light-black;
+
+    .exit {
+        color: $light-black;
+        font-size: 3rem;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: $orange;
+    }
+
+    form {
+
+        .input-field {
+            font-size: 4rem;
+            line-height: 4rem;
+            input {
+                font-size: 4rem;
+                height: 6rem;
+            }
+            
+            label {
+                font-size: 4rem;
+                color: $light-black;
+                transform: translateY(-40%);
+
+                &.active {
+                    transform: translateY(-125%);
+                }
+            }
+        }
+
+        input[type="text"]:focus:not([readonly]) {
+            border-bottom: 1px solid $orange !important;
+            box-shadow: 0 1px 0 0 $orange !important;
+            
+            &+label {
+                color: $orange !important;
+            }
+        }
+    }
+
+    .card {
+        .card-image {
+            padding: 0 0;
+        }
+
+        h3, h4 {
+            margin: 0 0;
+        }
+    }
+
+    .pagination {
+        a, span {
+            border: none;
+            color: $dark-white;
+            background-color: $dark-medium-grey; 
+        }
+        
+        .active span {
+            background-color: $orange;
+        }
+    }
+}

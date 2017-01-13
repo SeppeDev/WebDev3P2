@@ -1,0 +1,47 @@
+**********************************
+**********DEPLOYDOCUMENT**********
+**********************************
+
+Dit is de nieuwe Kowloon website. Er staan alle producten op en er hangt ook een Admin gedeelte aan voor het beheer van de producten.
+
+Adminroute: /admin
+	Nu kom je op de admin login page
+User: jos.kowloon@hotmail.com
+Pw: Kowloon
+
+
+
+Benodigdheden:
+	Laravel
+	PhpMyAdmin
+
+Installatie:
+	- Clean Ubuntu install
+	- apt-get install lamp-server
+	- apt-get install phpmyadmin
+
+	- /etc/apache2/apache2.conf
+		- <Directory /var/www>
+				AllowOverride All
+
+	- /etc/apache2/sites-enabled
+		- <VirtualHost *:80>
+				ServerName theritual.int
+
+				ServerAdmin goossens.seppe@hotmail.com
+				DocumentRoot /var/www/theRitual.int
+
+				ErrorLog ${APACHE_LOG_DIR}/tester.error.log
+				CustomLog ${APACHE_LOG_DIR}/tester.access.log combined
+			</VirtualHost>
+
+	-PhpMyAdmin
+		-nieuwe database aanmaken "WebDev3P2"
+
+	- Volledige project plaatsen in /var/www
+
+	- /var/www/Kowloon.int
+		- commandline openen
+		- "composer update"
+		- "php artisan migrate"
+
