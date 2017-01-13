@@ -4,6 +4,12 @@
 
 Dit is de nieuwe Kowloon website. Er staan alle producten op en er hangt ook een Admin gedeelte aan voor het beheer van de producten.
 
+
+github: https://github.com/SeppeDev/WebDev3P2
+c9: https://kowloon-exam-seppedev.c9users.io/
+
+
+
 Adminroute: /admin
 	Nu kom je op de admin login page
 User: jos.kowloon@hotmail.com
