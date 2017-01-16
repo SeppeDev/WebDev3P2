@@ -6120,9 +6120,22 @@ body {
 .nav > li > a:hover {
   background-color: #EDEDED; }
 
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: #535353; }
+  .breadcrumb:before {
+    content: none; }
+
 /* Home */
 .carousel {
-  height: 60vh !important; }
+  height: 70vh !important; }
+
+.logo {
+  position: fixed;
+  z-index: 100;
+  width: 20%;
+  left: 40%;
+  top: 50px; }
 
 /* Categories */
 .category-button {

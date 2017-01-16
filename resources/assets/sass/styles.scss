@@ -227,9 +227,28 @@ body {
     background-color: $light-grey;
 }
 
+
+/* Breadcrumbs */
+.breadcrumb {
+    background-color: $dark-grey;
+
+    &:before {
+        content: none;
+    }
+}
+
+
 /* Home */
 .carousel {
-    height: 60vh !important;
+    height: 70vh !important;
+}
+
+.logo {
+    position: fixed;
+    z-index: 100;
+    width: 20%;
+    left: 40%;
+    top: 50px;
 }
 
     /* Categories */

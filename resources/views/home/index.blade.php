@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="img/Logo.png"></a>
+
 <div class="carousel carousel-slider" data-indicators="true">
     
     <a class="carousel-item" href="#"><img src="img/Cat.jpg"></a>
@@ -19,11 +21,11 @@
             <div class="row mar-top-xl">
                 <div class="col l8 offset-l2 center">@lang("home.lorem ipsum")</div>
             </div>
-{{ App::getLocale()}}
+
             <div class="row">
                 @foreach ($categories as $category)
                     <div class="col l2 category-button hoverable">
-                        <a href="/category/{{$category->id}}">
+                        <a href="{{ App::getLocale()}}/category/{{$category->id}}">
                             <div class="image-container valign-wrapper">
                                 <img class="_{{$category->id}} valign" src="img/transparent.png" alt="{{$category->name}}">
                             </div>
@@ -47,7 +49,7 @@
                     @foreach ($hotItems as $hotItem)
                         <div class="col l3">
                             <div class="card hoverable">
-                                <a href="product/{{$hotItem->product->id}}">
+                                <a href="{{ url( App::getLocale() . '/product/' . $hotItem->product->id ) }}">
                                     <div class="card-image">
                                         <img src="{{$hotItem->product->pictures[0]->url}}">
                                         <div class="colors">
@@ -71,7 +73,7 @@
 
             <div class="row newsletter">
                 <div class="col l7">
-                    <img src="img/patern.jpg">
+                    <img src="{{ url( 'img/Patern.jpg' ) }}">
                     <div class="image-content">
                         <h2 class="center">@lang("home.discover")</h2>
                         <h3 class="center">@lang("home.only newsletter")</h3>

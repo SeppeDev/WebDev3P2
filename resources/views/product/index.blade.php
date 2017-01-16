@@ -22,13 +22,13 @@
                     <div class="col l6 images">
                         <div class="row">
                             <div class="col l12">
-                                <img src="{{$product->pictures[0]->url}}">
+                                <img src="{{ url( $product->pictures[0]->url ) }}">
                             </div>
                         </div>
                         <div class="row">
                             @if (isset($product->pictures[0]))
                                 <div class="col l4">
-                                    <img src="{{$product->pictures[0]->url}}">
+                                    <img src="{{ url( $product->pictures[0]->url ) }}">
                                 </div>
                             @endif
                             @if (isset($product->pictures[1]))
@@ -45,7 +45,12 @@
                     </div>
                     <div class="col l6 info">
                         <div>
-                            <p>K with some more breadcrumbs</p>
+                            <div class="row">
+                                <div class="col l12">
+                                    <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
+                                    <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb">{{$product->name}}</a>
+                                </div>
+                            </div>
 
                             <h1>{{$product->name}}</h1>
                             <h2>€{{$product->price}}</h2>
@@ -92,7 +97,7 @@
                         @foreach ($collection->products as $theProduct)
                             <div class="col l3">
                                 <div class="card hoverable">
-                                    <a href="{{url('product') . '/' . $theProduct->id}}">
+                                    <a href="{{ url( App::getLocale() . '/product/' . $theProduct->id )}}">
                                         <div class="card-image">
                                             <img src="{{$theProduct->pictures[0]->url}}">
                                             <div class="colors">

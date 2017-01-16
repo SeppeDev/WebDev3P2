@@ -12,7 +12,7 @@
                 
                 <div class="row">
                     <div class="right">
-                        <a class="exit" href="{{url( '/' )}}">
+                        <a class="exit" href="{{ url( App::getLocale() . '/' ) }}">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="row mar-top-xl">
-                    <form action="{{ url( 'faq/search' ) }}" method="POST" class="col s12">
+                    <form action="{{ url( App::getLocale() . '/faq/search' ) }}" method="POST" class="col s12">
                         <div class="row">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="input-field col s12">
@@ -38,7 +38,7 @@
                     <p>
                         Don't find what you're looking for?
                             </br>
-                        You can always contact our <a href="{{url( '/about' )}}">customer service</a>. We're happy to help you!
+                        You can always contact our <a href="{{ url( App::getLocale() . '/about' ) }}">customer service</a>. We're happy to help you!
                     </p>
                 </div>
 

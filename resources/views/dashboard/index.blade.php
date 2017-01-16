@@ -154,7 +154,7 @@
                                     <a href="{{url('product') . '/' . $product->id}}"><div class="card horizontal hoverable">
                                         
                                             <div class="card-image col l3">
-                                                <img src="{{ storage_path( $product->pictures[0]->url ) }}">
+                                                <img src="{{ url( $product->pictures[0]->url ) }}">
                                                 <div class="colors">
                                                     @foreach ($product->colors as $color)
                                                     <div class="color" style="background-color:#{{$color->hex_color}};">

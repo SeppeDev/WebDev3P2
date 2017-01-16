@@ -17,7 +17,10 @@
             @include('common.success')
             
             <div class="row mar-top-xl">
-                <div class="col l8 offset-l2 center">Breadcrumbs or something</div>
+                <div class="col l12">
+                    <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
+                    <a href="{{ url( App::getLocale() . '/category/' . $category->id ) }}" class="breadcrumb">{{$category->name}}</a>
+                </div>
             </div>
 
             <div class="row mar-top-xl">
@@ -32,9 +35,9 @@
                 @foreach ($category->products as $product)
                         <div class="col l3">
                             <div class="card hoverable">
-                                <a href="{{url('product') . '/' . $product->id}}">
+                                <a href="{{ url( App::getLocale() . '/product/' . $product->id )}}">
                                     <div class="card-image">
-                                        <img src="{{$product->pictures[0]->url}}">
+                                        <img src="{{ url( $product->pictures[0]->url ) }}">
                                         <div class="colors">
                                             @foreach ($product->colors as $color)
                                             <div class="color" style="background-color:#{{$color->hex_color}};">

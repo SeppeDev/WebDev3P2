@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="image">
-    <img src="img/Girl.jpg">
+    <img src="{{ url( 'img/Girl.jpg' ) }}">
 </div>
 
 <div id="about">
@@ -15,7 +15,10 @@
                 @include('common.success')
                 
                 <div class="row mar-top-xl">
-                    breadCrumbs or something
+                    <div class="col l12">
+                        <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
+                        <a href="{{ url( App::getLocale() . '/about' ) }}" class="breadcrumb">About</a>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -42,7 +45,7 @@
 
                 <div class="row mar-top-xl">
                     <h2>Leave us a message</h2>
-                    <form action="{{ url( 'message' ) }}" method="POST" class="col s12">
+                    <form action="{{ url( App::getLocale() . '/message' ) }}" method="POST" class="col s12">
                         <div class="row">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="input-field col s6">

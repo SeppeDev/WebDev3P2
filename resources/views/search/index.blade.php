@@ -16,14 +16,14 @@
                     </div>
 
                     <div class="col l1 right">
-                        <a class="exit" href="{{url( '/' )}}">
+                        <a class="exit" href="{{ url( App::getLocale() . '/' ) }}">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="row mar-top-xl">
-                    <form action="{{ url( 'search/search' ) }}" method="POST" class="col s12">
+                    <form action="{{ url( App::getLocale() . '/search/search' ) }}" method="POST" class="col s12">
                         <div class="row">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="input-field col s12">
@@ -38,17 +38,17 @@
                     <p>
                         Don't find what you're looking for?
                             </br>
-                        You can always contact our <a href="{{url( '/about' )}}">customer service</a>. We're happy to help you!
+                        You can always contact our <a href="{{ url( App::getLocale() . '/about' ) }}">customer service</a>. We're happy to help you!
                     </p>
                 </div>
 
                 <div class="row">
                     @foreach ($products as $product)
                         <div class="col l12">
-                            <a href="{{url('product') . '/' . $product->id}}"><div class="card horizontal hoverable">
+                            <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}"><div class="card horizontal hoverable">
                                 
                                     <div class="card-image col l3">
-                                        <img src="{{$product->pictures[0]->url}}">
+                                        <img src="{{ url( $product->pictures[0]->url ) }}">
                                         <div class="colors">
                                             @foreach ($product->colors as $color)
                                             <div class="color" style="background-color:#{{$color->hex_color}};">

@@ -21,10 +21,20 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-90333790-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
 </head>
 <body>
-    <?php include_once("analyticstracking.php") ?>
     <div id="app">
+        @include('cookieConsent::index')
         <div class="side-nav-bar">
             <!-- Material sidebar -->
             <div id="sidebar" class="sidebar sidebar-default open" role="navigation">
@@ -32,22 +42,22 @@
                 <ul class="nav sidebar-nav">
                     
                     <li id="menu">
-                        <a href="#">
+                        <a href="{{ url( App::getLocale() )}}">
                             <i class="fa fa-bars center-align" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="menu">
-                        <a href="/search">
+                        <a href="{{ url( App::getLocale() . '/search' )}}">
                             <i class="fa fa-search center-align" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="menu">
-                        <a href="/faq">
+                        <a href="{{ url( App::getLocale() . '/faq' )}}">
                             <i class="fa fa-question center-align" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="menu">
-                        <a href="/about">
+                        <a href="{{ url( App::getLocale() . '/about' )}}">
                             <i class="fa fa-envelope-o center-align" aria-hidden="true"></i>
                         </a>
                     </li>
@@ -55,27 +65,27 @@
                     <li class="divider"></li>
                     
                     <li class="category white-animals">
-                        <a href="/category/1">
+                        <a href="{{ url( App::getLocale() . '/category/1' )}}">
                             <img class="dogs" src="{{ url('img/transparent.png') }}" alt="Dogs">
                         </a>
                     </li>
                     <li class="category white-animals">
-                        <a href="/category/2">
+                        <a href="{{ url( App::getLocale() . '/category/2' )}}">
                             <img class="cats" src="{{ url('img/transparent.png') }}" alt="Cats">
                         </a>
                     </li>
                     <li class="category white-animals">
-                        <a href="/category/3">
+                        <a href="{{ url( App::getLocale() . '/category/3' )}}">
                             <img class="fish" src="{{ url('img/transparent.png') }}" alt="Fish">
                         </a>
                     </li>
                     <li class="category white-animals">
-                        <a href="/category/4">
+                        <a href="{{ url( App::getLocale() . '/category/4' )}}">
                             <img class="birds" src="{{ url('img/transparent.png') }}" alt="Birds">
                         </a>
                     </li>
                     <li class="category white-animals">
-                        <a href="/category/5">
+                        <a href="{{ url( App::getLocale() . '/category/5' )}}">
                             <img class="small-animals" src="{{ url('img/transparent.png') }}" alt="Small animals">
                         </a>
                     </li>
@@ -83,7 +93,6 @@
             </div>
         </div>
         <div class="row content">
-            @include('cookieConsent::index')
             @yield('content')
         </div>
     </div>
