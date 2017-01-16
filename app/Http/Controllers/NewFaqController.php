@@ -33,6 +33,11 @@ class NewFaqController extends Controller
 
     public function store(Request $request)
     {
+         $this->validate($request, [
+            "question" => "required",
+            "answer" => "required",
+        ]);
+
         $newFaq = new Faq;
         if($request->category != "NULL") {
             $newFaq->category_id = $request->category;

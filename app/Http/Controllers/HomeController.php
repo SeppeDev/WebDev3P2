@@ -37,14 +37,18 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-            $newSubscriber = new Subscriber;
-            $newSubscriber->email = $request->email;
-            $newSubscriber->save();
+         $this->validate($request, [
+            "email" => "required",
+        ]);
+
+        $newSubscriber = new Subscriber;
+        $newSubscriber->email = $request->email;
+        $newSubscriber->save();
 
 
-    		$this->sendSubscriptionMail($request);
-    		
-            return back()->with("success", "Subscription successful");
+        $this->sendSubscriptionMail($request);
+        
+        return back()->with("success", "Subscription successful");
     }
 
     private function sendSubscriptionMail(Request $request)

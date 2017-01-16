@@ -25,6 +25,10 @@ class EditCollectionController extends Controller
 
     public function edit(Request $request, Collection $collection)
     {
+         $this->validate($request, [
+            "name" => "required",
+        ]);
+
         $newCollection = $collection;
         $newCollection->name = $request->name;
         $newCollection->save();

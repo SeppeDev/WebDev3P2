@@ -28,6 +28,10 @@ class NewCollectionController extends Controller
 
     public function store(Request $request)
     {
+         $this->validate($request, [
+            "name" => "required",
+        ]);
+
         $newCollection = new Collection;
         $newCollection->name = $request->name;
         $newCollection->save();

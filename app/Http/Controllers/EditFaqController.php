@@ -30,6 +30,11 @@ class EditFaqController extends Controller
 
     public function edit(Request $request, Faq $faq)
     {
+         $this->validate($request, [
+            "question" => "required",
+            "answer" => "required",
+        ]);
+
         $newFaq = $faq;
         if($request->category != "NULL") {
             $newFaq->category_id = $request->category;

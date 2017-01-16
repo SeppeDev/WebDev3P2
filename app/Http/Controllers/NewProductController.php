@@ -40,6 +40,23 @@ class NewProductController extends Controller
 
     public function store(Request $request)
     {
+         $this->validate($request, [
+            "category" => "required",
+            "name" => "required",
+            "price" => "required",
+            "description" => "required",
+            "technical_description" => "required",
+
+            "color" => "required",
+
+            "file" => "required",
+
+            "size_name" => "required",
+            "width" => "required",
+            "length" => "required",
+            "height" => "required",
+        ]);
+
         $newProduct = new Product;
         $newProduct->category_id = $request->category;
         $newProduct->name = $request->name;
@@ -79,11 +96,12 @@ class NewProductController extends Controller
 
     private function storeImage($file, $id)
     {
-        $url = $file->store("images");
+        //$url = $file->store("../images");
+        $url = $file->store("images", "upload");
 
         $newPicture = new Picture;
         $newPicture->product_id = $id;
-        $newPicture->url = "app/" . $url;
+        $newPicture->url = $url;
         $newPicture->save();
     }
 

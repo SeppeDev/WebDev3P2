@@ -44,6 +44,14 @@ class EditProductController extends Controller
 
     public function edit(Request $request, Product $product)
     {
+        $this->validate($request, [
+            "category" => "required",
+            "name" => "required",
+            "price" => "required",
+            "description" => "required",
+            "technical_description" => "required",
+        ]);
+
         $newProduct = $product;
         $newProduct->category_id = $request->category;
         $newProduct->name = $request->name;
@@ -69,6 +77,13 @@ class EditProductController extends Controller
 
     public function storeNewSize(Request $request, Product $product)
     {
+        $this->validate($request, [
+            "size_name" => "required",
+            "width" => "required",
+            "length" => "required",
+            "height" => "required",
+        ]);
+
         $this->storeSize($product->id, $request->size_name, $request->width, $request->length, $request->height);
         
         return back()->with("success", "Size successfully created");
@@ -84,6 +99,10 @@ class EditProductController extends Controller
     /*COLOR*/
     public function storeNewColor(Request $request, Product $product)
     {
+         $this->validate($request, [
+            "color" => "required",
+        ]);
+
         $this->storeColor($product->id, $request->color);
         
         return back()->with("success", "Color successfully created");
@@ -99,6 +118,10 @@ class EditProductController extends Controller
     /*Image*/
     public function storeNewImage(Request $request, Product $product)
     {
+         $this->validate($request, [
+            "file" => "required",
+        ]);
+
         $this->storeImage($request->file("image"), $product->id);
         
         return back()->with("success", "Image successfully created");
