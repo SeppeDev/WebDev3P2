@@ -39,7 +39,7 @@ class NewProductController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {//dd($request);
          $this->validate($request, [
             "category" => "required",
             "name" => "required",
@@ -49,7 +49,7 @@ class NewProductController extends Controller
 
             "color" => "required",
 
-            "file" => "required",
+            "image" => "required",
 
             "size_name" => "required",
             "width" => "required",
@@ -69,12 +69,16 @@ class NewProductController extends Controller
         $this->storeSize($newProduct->id, $request->size_name, $request->width, $request->length, $request->height);
         $this->storeColor($newProduct->id, $request->color);
 
-        foreach ($request->collections as $key=>$value) {
-            $this->createCollectionLinks($newProduct, $key);
+        if ($request->collections) {
+            foreach ($request->collections as $key=>$value) {
+                $this->createCollectionLinks($newProduct, $key);
+            }
         }
 
-        foreach ($request->faqs as $key=>$value) {
-            $this->createFaqLinks($newProduct, $key);
+        if ($request->faqs) {
+            foreach ($request->faqs as $key=>$value) {
+                $this->createFaqLinks($newProduct, $key);
+            }
         }
 
         return redirect("/admin/dashboard")->with("success", "Product successfully created!");

@@ -116,15 +116,12 @@
                                     <div class="col l11">{{$picture->url}}</div>
                                     <div class="col l11 {{(count($product->pictures) == 1) ? '' : 'hidden'}}">You at least need one picture. If you don't like this one, first create a new one.</div>
 
-                                    <div class="col l1">
+                                    <div class="col l6">
                                         <a href="{{ url('/admin/dashboard/deleteimage/' ) . '/' . $picture->id }} "
                                                         onclick="event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$picture->id}}').submit();" {{(count($product->pictures) == 1) ? "class=hidden" : ""}}>
-                                            <div class="card horizontal hoverable">
-                                            
-                                                Delete
-                                                
-                                            </div>
+                                                                    document.getElementById('delete-form-{{$picture->id}}').submit();"
+                                                                    class="btn delete {{(count($product->pictures) == 1) ? 'hidden' : ''}}">
+                                            Delete
                                         </a>
                                         <form id="delete-form-{{$picture->id}}" action="{{ url('/admin/dashboard/deleteimage/' ). '/' . $picture->id }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -181,12 +178,9 @@
                                     <div class="col l1">
                                         <a href="{{ url('/admin/dashboard/deletesize/' ) . '/' . $size->id }} "
                                                         onclick="event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$size->id}}').submit();" {{(count($product->sizes) == 1) ? "class=hidden" : ""}}>
-                                            <div class="card horizontal hoverable">
-                                            
-                                                Delete
-                                                
-                                            </div>
+                                                                    document.getElementById('delete-form-{{$size->id}}').submit();"
+                                                                    class="btn delete {{(count($product->sizes) == 1) ? 'hidden' : ''}}">
+                                            Delete
                                         </a>
                                         <form id="delete-form-{{$size->id}}" action="{{ url('/admin/dashboard/deletesize/' ). '/' . $size->id }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -225,12 +219,9 @@
                                     <div class="col l1">
                                         <a href="{{ url('/admin/dashboard/deletecolor/' ) . '/' . $color->id }} "
                                                         onclick="event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$color->id}}').submit();" {{(count($product->colors) == 1) ? "class=hidden" : ""}}>
-                                            <div class="card horizontal hoverable">
-                                            
-                                                Delete
-                                                
-                                            </div>
+                                                                    document.getElementById('delete-form-{{$color->id}}').submit();"
+                                                                    class="btn delete {{(count($product->colors) == 1) ? 'hidden' : ''}}">
+                                            Delete
                                         </a>
                                         <form id="delete-form-{{$color->id}}" action="{{ url('/admin/dashboard/deletecolor/' ). '/' . $color->id }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
