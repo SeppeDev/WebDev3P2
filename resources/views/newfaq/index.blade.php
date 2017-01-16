@@ -48,7 +48,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row">
                                 <div class="input-field col l4">
-                                    <select name="category" class="icons">
+                                    <select name="category">
                                         <option value="NULL" >None</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}" >{{$category->name}}</option>
@@ -105,7 +105,7 @@
                                     </div>
                                     
                                     <div class="col l1">
-                                        <a href="{{ url('/admin/dashboard/editfaq/' ) . '/' . $faq->id }}">
+                                        <a class="btn edit" href="{{ url('/admin/dashboard/editfaq/' ) . '/' . $faq->id }}">
                                                 Edit
                                         </a>
                                     </div>
@@ -113,12 +113,9 @@
                                     <div class="col l1">
                                         <a href="{{ url('/admin/dashboard/deletefaq/' ) . '/' . $faq->id }}"
                                                         onclick="event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$faq->id}}').submit();">
-                                            <div class="card horizontal hoverable">
-                                            
-                                                Delete
-                                                
-                                            </div>
+                                                                    document.getElementById('delete-form-{{$faq->id}}').submit();"
+                                                                    class="btn delete">
+                                            Delete
                                         </a>
                                         <form id="delete-form-{{$faq->id}}" action="{{ url('/admin/dashboard/deletefaq/' ). '/' . $faq->id }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}

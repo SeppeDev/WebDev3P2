@@ -51,7 +51,7 @@
                                     <div class="card hoverable">
                                         <a href="product/{{$hotItem->product->id}}">
                                             <div class="card-image">
-                                                <img src="{{$hotItem->product->pictures[0]->url}}">
+                                                <img src="{{ url( $hotItem->product->pictures[0]->url ) }}">
                                                 <div class="colors">
                                                     @foreach ($hotItem->product->colors as $color)
                                                     <div class="color" style="background-color:#{{$color->hex_color}};">
@@ -80,7 +80,7 @@
                                         @foreach ($categories as $category)
                                             <optgroup label="{{$category->name}}">
                                                 @foreach ($category->products as $product)
-                                                    <option value="{{$product->id}}" data-icon="{{$product->pictures[0]->url}}" class="circle" {{($product->id == $hotItemsIdArray[0]) ? "selected" : ""}}>{{$product->name}}</option>
+                                                    <option value="{{$product->id}}" data-icon="{{ url( $product->pictures[0]->url ) }}" class="circle" {{($product->id == $hotItemsIdArray[0]) ? "selected" : ""}}>{{$product->name}}</option>
                                                 @endforeach
                                             </optgroup>
                                         @endforeach
@@ -93,7 +93,7 @@
                                         @foreach ($categories as $category)
                                             <optgroup label="{{$category->name}}">
                                                 @foreach ($category->products as $product)
-                                                    <option value="{{$product->id}}" data-icon="{{$product->pictures[0]->url}}" class="circle" {{($product->id == $hotItemsIdArray[1]) ? "selected" : ""}}>{{$product->name}}</option>
+                                                    <option value="{{$product->id}}" data-icon="{{ url( $product->pictures[0]->url ) }}" class="circle" {{($product->id == $hotItemsIdArray[1]) ? "selected" : ""}}>{{$product->name}}</option>
                                                 @endforeach
                                             </optgroup>
                                         @endforeach
@@ -106,7 +106,7 @@
                                         @foreach ($categories as $category)
                                             <optgroup label="{{$category->name}}">
                                                 @foreach ($category->products as $product)
-                                                    <option value="{{$product->id}}" data-icon="{{$product->pictures[0]->url}}" class="circle" {{($product->id == $hotItemsIdArray[2]) ? "selected" : ""}}>{{$product->name}}</option>
+                                                    <option value="{{$product->id}}" data-icon="{{ url( $product->pictures[0]->url ) }}" class="circle" {{($product->id == $hotItemsIdArray[2]) ? "selected" : ""}}>{{$product->name}}</option>
                                                 @endforeach
                                             </optgroup>
                                         @endforeach
@@ -119,7 +119,7 @@
                                         @foreach ($categories as $category)
                                             <optgroup label="{{$category->name}}">
                                                 @foreach ($category->products as $product)
-                                                    <option value="{{$product->id}}" data-icon="{{$product->pictures[0]->url}}" class="circle" {{($product->id == $hotItemsIdArray[3]) ? "selected" : ""}}>{{$product->name}}</option>
+                                                    <option value="{{$product->id}}" data-icon="{{ url( $product->pictures[0]->url ) }}" class="circle" {{($product->id == $hotItemsIdArray[3]) ? "selected" : ""}}>{{$product->name}}</option>
                                                 @endforeach
                                             </optgroup>
                                         @endforeach
@@ -181,7 +181,7 @@
                                 </div>
                                 
                                 <div class="col l1">
-                                    <a href="{{ url('/admin/dashboard/editproduct/' ) . '/' . $product->id }}">
+                                    <a class="btn edit" href="{{ url('/admin/dashboard/editproduct/' ) . '/' . $product->id }}">
                                             Edit
                                     </a>
                                 </div>
@@ -189,12 +189,9 @@
                                 <div class="col l1">
                                     <a href="{{ url('/admin/dashboard/deleteproduct/' ) . '/' . $product->id }}"
                                                     onclick="event.preventDefault();
-                                                                document.getElementById('delete-form-{{$product->id}}').submit();">
-                                        <div class="card horizontal hoverable">
-                                        
+                                                                document.getElementById('delete-form-{{$product->id}}').submit();"
+                                                                class="btn delete">
                                             Delete
-                                            
-                                        </div>
                                     </a>
                                     <form id="delete-form-{{$product->id}}" action="{{ url('/admin/dashboard/deleteproduct/' ). '/' . $product->id }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}

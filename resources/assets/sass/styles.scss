@@ -25,10 +25,16 @@ $yellow 			: #FFB93F;
 $pink 				: #FF6F9E;
 $green 				: #7BFF81;
 
+$red                : darken(desaturate(#FF2021, 15%), 5%);
+
 
 body {
 	color           : $dark-light-grey !important;
 	background-color: $medium-dark-grey;
+}
+
+a:hover {
+    text-decoration: none !important;
 }
 
 .row.content {
@@ -201,6 +207,14 @@ body {
 }
 
 /* Navbar */
+.nav-wrapper {
+    background-color: $pink;
+    a {
+        color: $black !important;
+        font-size: 2rem;
+    }
+}
+
 .side-nav-bar {
     width: 5%;
     float: left;
@@ -295,6 +309,46 @@ body {
             margin-right: 5px;
         }
     }
+
+    input:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid $pink !important;
+        box-shadow: 0 1px 0 0 $pink !important;
+        
+        &+label {
+            color: $pink !important;
+        }
+    }
+
+    [type="checkbox"]:checked+label:before {
+        border-right: 2px solid $pink;
+        border-bottom: 2px solid $pink;
+    }
+
+    .btn {
+        background-color: $pink;
+        color: $black;
+
+        &.delete {
+            background-color: $red;
+        }
+        &.edit {
+            background-color: $green;
+        }
+    }
+}
+
+.caret {
+    border-top: none !important;
+}
+
+.dropdown-content li>span {
+    color: $pink;
+}
+
+input[type="submit"] {
+    background-color: $pink;
+    color: $black;
+    border: 2px solid $pink;
 }
 
     /* Email */
@@ -641,6 +695,21 @@ body {
         
         .active span {
             background-color: $orange;
+        }
+    }
+}
+
+/* ADMIN */
+.card-content{
+    .pagination {
+        a, span {
+            border: none;
+            color: $dark-white;
+            background-color: $dark-medium-grey; 
+        }
+        
+        .active span {
+            background-color: $pink;
         }
     }
 }

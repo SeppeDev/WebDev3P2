@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="{{ url( 'img/Logo.png' ) }}"></a>
+
 <div class="image">
     <img src="{{ url( 'img/Girl.jpg' ) }}">
 </div>

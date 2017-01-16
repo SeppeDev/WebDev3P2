@@ -84,7 +84,7 @@
                                     </div>
                                     
                                     <div class="col l1">
-                                        <a href="{{ url('/admin/dashboard/editcollection/' ) . '/' . $collection->id }}">
+                                        <a class="btn edit" href="{{ url('/admin/dashboard/editcollection/' ) . '/' . $collection->id }}">
                                                 Edit
                                         </a>
                                     </div>
@@ -92,12 +92,9 @@
                                     <div class="col l1">
                                         <a href="{{ url('/admin/dashboard/deletecollection/' ) . '/' . $collection->id }}"
                                                         onclick="event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$collection->id}}').submit();">
-                                            <div class="card horizontal hoverable">
-                                            
-                                                Delete
-                                                
-                                            </div>
+                                                                    document.getElementById('delete-form-{{$collection->id}}').submit();"
+                                                                    class="btn delete">
+                                            Delete
                                         </a>
                                         <form id="delete-form-{{$collection->id}}" action="{{ url('/admin/dashboard/deletecollection/' ). '/' . $collection->id }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}

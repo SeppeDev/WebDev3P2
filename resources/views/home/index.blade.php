@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="img/Logo.png"></a>
+<a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="{{ url('img/Logo.png') }}"></a>
 
 <div class="carousel carousel-slider" data-indicators="true">
     
