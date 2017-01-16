@@ -6139,8 +6139,11 @@ a:hover {
 .carousel {
   height: 70vh !important; }
 
+.logo-div {
+  height: 150px; }
+
 .logo {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   width: 20%;
   left: 40%;

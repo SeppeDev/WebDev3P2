@@ -9,12 +9,8 @@
             @include('common.errors')
             @include('common.success')
             
-            <div class="row mar-top-xl">
-                <div class="col l8 offset-l2 center">
-                    <a href="{{url( '/' )}}">
-                        <h1>KOWLOON</h1>
-                    </a>
-                </div>
+            <div class="logo-div">
+                <a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="{{ url('img/Logo.png') }}"></a>
             </div>
 
             <div class="row mar-top-xl">
@@ -99,7 +95,7 @@
                                 <div class="card hoverable">
                                     <a href="{{ url( App::getLocale() . '/product/' . $theProduct->id )}}">
                                         <div class="card-image">
-                                            <img src="{{$theProduct->pictures[0]->url}}">
+                                            <img src="{{ url( $theProduct->pictures[0]->url ) }}">
                                             <div class="colors">
                                                 @foreach ($theProduct->colors as $color)
                                                 <div class="color" style="background-color:#{{$color->hex_color}};">
@@ -134,7 +130,7 @@
 
             <div class="row newsletter">
                 <div class="col l7">
-                    <img src="{{url( 'img/patern.jpg' )}}">
+                    <img src="{{url( App::getLocale() . 'img/patern.jpg' )}}">
                     <div class="image-content">
                         <h2 class="center">Discover amazing Kowloon deals!</h2>
                         <h3 class="center">Only in our newsletter</h3>
