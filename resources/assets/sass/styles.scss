@@ -156,6 +156,58 @@ a:hover {
     }
 }
 
+.active {
+    .dogs {   // Dogs 
+        @extend .animal;
+        height: 29px;
+        width: 27px;
+        background-position: 0px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cats {   //Cats
+        @extend .animal;
+        height: 29px;
+        width: 26px;
+        background-position: -30px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .fish {   //Fish
+        @extend .animal;
+        height: 28px;
+        width: 28px;
+        background-position: -60px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .birds {   //Birds
+        @extend .animal;
+        height: 38px;
+        width: 23px;
+        background-position: -90px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+
+    .small-animals {   //Small Animals
+        @extend .animal;
+        height: 30px;
+        width: 27px;
+        background-position: -120px -70px;
+
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 .dogs {   // Dogs 
     @extend .animal;
     height: 29px;
@@ -216,6 +268,8 @@ a:hover {
 }
 
 .side-nav-bar {
+    position: fixed;
+    z-index: 100;
     width: 5%;
     float: left;
     position: fixed;

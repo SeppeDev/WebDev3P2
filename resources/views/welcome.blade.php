@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+        
+    <a class="logo" href="{{ url( App::getLocale() . '/' ) }}"><img src="{{ url('img/Logo.png') }}"></a>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <div class="carousel carousel-slider" data-indicators="true">
+        
+        <a class="carousel-item" href="#"><img src="img/Cat.jpg"></a>
+        <a class="carousel-item" href="#"><img src="img/Parrot.jpg"></a>
+        <a class="carousel-item" href="#"><img src="img/Luka.jpg"></a>
+    </div>
 
-    </head>
-    <body>
-        <div class="container">
-            <a href="{{ url( 'en/' ) }}">English</a>
-            <a href="{{ url( 'nl/' ) }}">Nederlands</a>
+    <div class="container">
+        <div class="row mar-top-xl">
+            <div class="col l4">
+            </div>
+            <div class="col l2">
+                <a class="btn" href="{{ url( 'en/' ) }}">English</a>
+            </div>
+            <div class="col l2">
+                <a class="btn" href="{{ url( 'nl/' ) }}">Nederlands</a>
+            </div>
         </div>
-    </body>
-</html>
+    </div>
+        
+@endsection

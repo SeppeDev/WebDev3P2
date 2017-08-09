@@ -35,66 +35,9 @@
 <body>
     <div id="app">
         @include('cookieConsent::index')
-        <div class="side-nav-bar">
-            <!-- Material sidebar -->
-            <div id="sidebar" class="sidebar sidebar-default open" role="navigation">
-                <!-- Sidebar navigation -->
-                <ul class="nav sidebar-nav">
-                    
-                    <li id="menu">
-                        <a href="{{ url( App::getLocale() )}}">
-                            <i class="fa fa-bars center-align" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li class="menu">
-                        <a href="{{ url( App::getLocale() . '/search' )}}">
-                            <i class="fa fa-search center-align" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li class="menu">
-                        <a href="{{ url( App::getLocale() . '/faq' )}}">
-                            <i class="fa fa-question center-align" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li class="menu">
-                        <a href="{{ url( App::getLocale() . '/about' )}}">
-                            <i class="fa fa-envelope-o center-align" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    
-                    <li class="divider"></li>
-                    
-                    <li class="category white-animals">
-                        <a href="{{ url( App::getLocale() . '/category/1' )}}">
-                            <img class="dogs" src="{{ url('img/transparent.png') }}" alt="Dogs">
-                        </a>
-                    </li>
-                    <li class="category white-animals">
-                        <a href="{{ url( App::getLocale() . '/category/2' )}}">
-                            <img class="cats" src="{{ url('img/transparent.png') }}" alt="Cats">
-                        </a>
-                    </li>
-                    <li class="category white-animals">
-                        <a href="{{ url( App::getLocale() . '/category/3' )}}">
-                            <img class="fish" src="{{ url('img/transparent.png') }}" alt="Fish">
-                        </a>
-                    </li>
-                    <li class="category white-animals">
-                        <a href="{{ url( App::getLocale() . '/category/4' )}}">
-                            <img class="birds" src="{{ url('img/transparent.png') }}" alt="Birds">
-                        </a>
-                    </li>
-                    <li class="category white-animals">
-                        <a href="{{ url( App::getLocale() . '/category/5' )}}">
-                            <img class="small-animals" src="{{ url('img/transparent.png') }}" alt="Small animals">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row content">
-            @yield('content')
-        </div>
+        
+        @yield('content')
+        
     </div>
 
     <!-- Scripts -->
