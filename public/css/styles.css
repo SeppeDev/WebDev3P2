@@ -5994,7 +5994,7 @@ a:hover {
   background-color: #FF6F9E !important; }
 
 /* Sprites */
-.animal, ._1, ._2, ._3, ._4, ._5, .white-animals .dogs, .white-animals .cats, .white-animals .fish, .white-animals .birds, .white-animals .small-animals, .dogs, .cats, .fish, .birds, .small-animals {
+.animal, ._1, ._2, ._3, ._4, ._5, .white-animals .dogs, .white-animals .cats, .white-animals .fish, .white-animals .birds, .white-animals .small-animals, .active .dogs, .active .cats, .active .fish, .active .birds, .active .small-animals, .dogs, .cats, .fish, .birds, .small-animals {
   background-image: url("../img/Animals-sprite.png");
   background-repeat: no-repeat; }
 
@@ -6068,6 +6068,41 @@ a:hover {
   display: block;
   margin: 0 auto; }
 
+.active .dogs {
+  height: 29px;
+  width: 27px;
+  background-position: 0px -70px;
+  display: block;
+  margin: 0 auto; }
+
+.active .cats {
+  height: 29px;
+  width: 26px;
+  background-position: -30px -70px;
+  display: block;
+  margin: 0 auto; }
+
+.active .fish {
+  height: 28px;
+  width: 28px;
+  background-position: -60px -70px;
+  display: block;
+  margin: 0 auto; }
+
+.active .birds {
+  height: 38px;
+  width: 23px;
+  background-position: -90px -70px;
+  display: block;
+  margin: 0 auto; }
+
+.active .small-animals {
+  height: 30px;
+  width: 27px;
+  background-position: -120px -70px;
+  display: block;
+  margin: 0 auto; }
+
 .dogs {
   height: 29px;
   width: 27px;
@@ -6111,6 +6146,8 @@ a:hover {
     font-size: 2rem; }
 
 .side-nav-bar {
+  position: fixed;
+  z-index: 100;
   width: 5%;
   float: left;
   position: fixed; }
