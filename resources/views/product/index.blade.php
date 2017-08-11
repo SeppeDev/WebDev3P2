@@ -88,12 +88,12 @@
                                 @endif
                                 @if (isset($product->pictures[1]))
                                     <div class="col l4">
-                                        <img src="{{$product->pictures[1]->url}}">
+                                        <img src="{{ url( $product->pictures[1]->url ) }}">
                                     </div>
                                 @endif
                                 @if (isset($product->pictures[2]))
                                     <div class="col l4">
-                                        <img src="{{$product->pictures[2]->url}}">
+                                        <img src="{{ url( $product->pictures[2]->url ) }}">
                                     </div>
                                 @endif
                             </div>
@@ -189,7 +189,7 @@
 
                 <div class="row newsletter">
                     <div class="col l7">
-                        <img src="{{url( App::getLocale() . 'img/patern.jpg' )}}">
+                        <img src="{{ url( '/img/patern.jpg' ) }}">
                         <div class="image-content">
                             <h2 class="center">Discover amazing Kowloon deals!</h2>
                             <h3 class="center">Only in our newsletter</h3>

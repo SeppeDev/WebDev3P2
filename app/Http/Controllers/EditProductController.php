@@ -119,7 +119,7 @@ class EditProductController extends Controller
     public function storeNewImage(Request $request, Product $product)
     {
          $this->validate($request, [
-            "file" => "required",
+            "image" => "required",
         ]);
 
         $this->storeImage($request->file("image"), $product->id);
@@ -141,11 +141,11 @@ class EditProductController extends Controller
 
     private function storeImage($file, $id)
     {
-        $url = $file->store("images");
+        $url = $file->store("images", "upload");
 
         $newPicture = new Picture;
         $newPicture->product_id = $id;
-        $newPicture->url = "app/" . $url;
+        $newPicture->url = $url;
         $newPicture->save();
     }
 
