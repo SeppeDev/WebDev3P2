@@ -88,7 +88,7 @@
                                 <div class="image-container valign-wrapper">
                                     <img class="_{{$category->id}} valign" src="img/transparent.png" alt="{{$category->name}}">
                                 </div>
-                                <h3 class="center">{{$category->name}}</h3>
+                                <h3 class="center">@lang("home.$category->name")</h3>
                             </a>
                         </div>
                     @endforeach
@@ -97,7 +97,7 @@
                         <div class="image-container">
                                 <i class="fa fa-plus center-align" aria-hidden="true"></i>
                             </div>
-                        <h3 class="center">Other</h3>
+                        <h3 class="center">@lang("home.other")</h3>
                     </div>
                 </div>
 
@@ -140,7 +140,7 @@
                     </div>
                     <div class="col l5 email-content">
                         <div class="row">
-                            <h3>Subscribe to our newsletter</h3>
+                            <h3>@lang("home.subscribe")</h3>
                             <p>Lorem ipsum dolor sit amet...</p>
                         </div>
                         <div class="row">
