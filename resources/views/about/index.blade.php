@@ -78,19 +78,19 @@
                     <div class="row mar-top-xl">
                         <div class="col l12">
                             <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
-                            <a href="{{ url( App::getLocale() . '/about' ) }}" class="breadcrumb">About</a>
+                            <a href="{{ url( App::getLocale() . '/about' ) }}" class="breadcrumb">@lang("about.about")</a>
                         </div>
                     </div>
 
                     <div class="row">
-                        <h1>About us</h1>
+                        <h1>@lang("about.about")</h1>
                         <div class="col l8">
                             <h2>Kowloon</h2>
                             <p>
-                                Pet Concept, active since 1998, is developing, importing and exporting products for pets worldwide.
+                                @lang("about.content first")
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                @lang("about.content second")
                             </p>
                         </div>
 
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="row mar-top-xl">
-                        <h2>Leave us a message</h2>
+                        <h2>@lang("about.message")</h2>
                         <form action="{{ url( App::getLocale() . '/message' ) }}" method="POST" class="col s12">
                             <div class="row">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -118,14 +118,14 @@
                                     <label for="content">Textarea</label>
                                 </div>
                                 <div class="input-field col s4">
-                                    <input type="submit" value="Send">
+                                    <input type="submit" value='@lang("about.send")'>
                                 </div>
                             </div>
                         </form>
                     </div>
 
                     <div class="row mar-top-xl">
-                        <h2>Frequently asked questions</h2>
+                        <h2>@lang("about.faq")</h2>
                         <ul class="collapsible" data-collapsible="expandable">
                             @foreach ($faqs as $faq)
                                 <li class=" active hoverable">
