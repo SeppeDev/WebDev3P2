@@ -298,10 +298,39 @@ a:hover {
 
 /* Breadcrumbs */
 .breadcrumb {
-    background-color: $dark-grey;
+    font-size: 12px;
+    color: $dark-light-grey !important;
 
-    &:before {
-        content: none;
+    position: relative;
+    bottom: 3px;
+
+    background-color: $dark-black;
+    padding: 3px 12px 3px 8px;
+    border-radius: 0px;
+
+    &::before {
+        content: "";
+        display: block; 
+        width: 0; 
+        height: 0;
+        border-top: 10px solid transparent;       
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid $dark-black;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        margin-left: 0;
+        margin-right: 0;
+        right: 100%;
+        z-index: 1; 
+    }
+
+    &_K{
+        font-family: Choplin-ExtraLight !important;
+        font-size: 24px !important;
+        bottom: 0;
+
+        background-color: transparent !important;
     }
 }
 
