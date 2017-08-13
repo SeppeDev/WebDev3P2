@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="row">
-                    <h1>@lang("home.hot items")</h1>
+                    <h1 class="title_1">@lang("home.hot items")</h1>
                     
                     <div class="row">
                         @foreach ($hotItems as $hotItem)

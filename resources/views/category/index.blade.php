@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="row mar-top-xl">
-                    <h1>{{$category->name}} articles</h1>
+                    <h1 class="title_1">{{$category->name}} articles</h1>
                 </div>
 
                 <div class="row">

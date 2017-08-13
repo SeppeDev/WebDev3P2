@@ -94,14 +94,14 @@
                 
                 <div class="row mar-top-xl">
                     <div class="col l8 offset-l2 center">
-                        <h1>DASHBOARD</h1>
+                        <h1 class="title_1">DASHBOARD</h1>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-content">
                         <div class="row">
-                            <h1>HOT ITEMS</h1>
+                            <h1 class="title_1">HOT ITEMS</h1>
                             
                             <div class="row">
                                 @foreach ($hotItems as $hotItem)
@@ -201,7 +201,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="row">
-                            <h1 class="col l6">Producten</h1>
+                            <h1  class="col l6 title_1">Producten</h1>
 
                             <a href="{{ url('/admin/dashboard/newproduct') }}" class="btn col l2 push-l4">
                                 Create New Product

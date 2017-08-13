@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="row mar-top-xl">
-                        <h1>Fraquently asked questions</h1>
+                        <h1 class="title_1">Fraquently asked questions</h1>
                     </div>
 
                     <div class="row mar-top-xl">
