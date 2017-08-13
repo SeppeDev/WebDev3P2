@@ -77,13 +77,16 @@
                     
                     <div class="row mar-top-xl">
                         <div class="col l12">
-                            <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
+                            <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
                             <a href="{{ url( App::getLocale() . '/about' ) }}" class="breadcrumb">@lang("about.about")</a>
                         </div>
                     </div>
 
                     <div class="row">
-                        <h1>@lang("about.about")</h1>
+                        <div class="col l8">
+                            <h1 class="title_1">@lang("about.about")</h1>
+                        </div>
+
                         <div class="col l8">
                             <h2>Kowloon</h2>
                             <p>
