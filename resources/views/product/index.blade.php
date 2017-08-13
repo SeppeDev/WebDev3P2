@@ -102,7 +102,7 @@
                             <div>
                                 <div class="row">
                                     <div class="col l12">
-                                        <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb">K</a>
+                                        <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
                                         <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb">{{$product->name}}</a>
                                     </div>
                                 </div>
