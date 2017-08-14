@@ -71,7 +71,7 @@
                     
                     <div class="row">
                         <div class="col l11">
-                            <h2>Advanced Filter</h2>
+                            <h2 class="title_3">Advanced Filter</h2>
                         </div>
 
                         <div class="col l1 right">
@@ -87,7 +87,7 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="input-field col s12">
                                     <input name ="search" id="search" type="text" value="{{$search}}">
-                                    <label for="search"><i class="fa fa-search" aria-hidden="true"></i> Just start typing and hit <i class="fa fa-arrow-left" aria-hidden="true"></i> to search </label>
+                                    <label for="search" class="title_4"><i class="fa fa-search" aria-hidden="true"></i> Just start typing and hit <i class="fa fa-arrow-left" aria-hidden="true"></i> to search </label>
                                 </div>
                             </div>
                         </form>
