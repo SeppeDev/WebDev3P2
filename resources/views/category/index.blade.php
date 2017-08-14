@@ -80,7 +80,7 @@
                 <div class="row mar-top-xl">
                     <div class="col l12">
                         <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
-                        <a href="{{ url( App::getLocale() . '/category/' . $category->id ) }}" class="breadcrumb">{{$category->name}}</a>
+                        <a href="{{ url( App::getLocale() . '/category/' . $category->id ) }}" class="breadcrumb breadcrumb_category"><span class="breadcrumb_color breadcrumb_color-{{$category->id}}"></span>{{$category->name}}</a>
                     </div>
                 </div>
 
