@@ -88,7 +88,7 @@
                                 <div class="image-container valign-wrapper">
                                     <img class="_{{$category->id}} valign" src="img/transparent.png" alt="{{$category->name}}">
                                 </div>
-                                <h3 class="center">@lang("home.$category->name")</h3>
+                                <h3 class="center title_2">@lang("home.$category->name")</h3>
                             </a>
                         </div>
                     @endforeach
@@ -97,12 +97,12 @@
                         <div class="image-container">
                                 <i class="fa fa-plus center-align" aria-hidden="true"></i>
                             </div>
-                        <h3 class="center">@lang("home.other")</h3>
+                        <h3 class="center title_2">@lang("home.other")</h3>
                     </div>
                 </div>
 
                 <div class="row">
-                    <h1>@lang("home.hot items")</h1>
+                    <h1 class="title_1">@lang("home.hot items")</h1>
                     
                     <div class="row">
                         @foreach ($hotItems as $hotItem)

@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
 
-                                <h1>{{$product->name}}</h1>
+                                <h1 class="title_1">{{$product->name}}</h1>
                                 <h2>€{{$product->price}}</h2>
                                 <h3>Colors</h3>
                                 <div class="colors">

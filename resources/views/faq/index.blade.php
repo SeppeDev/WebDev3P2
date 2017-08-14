@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="row mar-top-xl">
-                        <h1>Fraquently asked questions</h1>
+                        <h1 class="title_1">FREQUENTLY ASKED QUESTIONS</h1>
                     </div>
 
                     <div class="row mar-top-xl">
@@ -87,7 +87,7 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="input-field col s12">
                                     <input name ="search" id="search" type="text" value="{{$search}}">
-                                    <label for="search"><i class="fa fa-search" aria-hidden="true"></i> Search on keyword <i class="fa fa-arrow-left" aria-hidden="true"></i></label>
+                                    <label for="search" class="title_4"><i class="fa fa-search" aria-hidden="true"></i> Search on keyword <i class="fa fa-arrow-left" aria-hidden="true"></i></label>
                                 </div>
                             </div>
                         </form>

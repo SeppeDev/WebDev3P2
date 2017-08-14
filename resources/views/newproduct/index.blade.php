@@ -94,7 +94,7 @@
                 
                 <div class="row mar-top-xl">
                     <div class="col l8 offset-l2 center">
-                        <h1>New Product</h1>
+                        <h1 class="title_1">New Product</h1>
                     </div>
                 </div>
 
