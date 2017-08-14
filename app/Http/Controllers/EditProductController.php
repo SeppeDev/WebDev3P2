@@ -134,6 +134,26 @@ class EditProductController extends Controller
         return back()->with("success", "Image successfully deleted!");
     }
 
+    /*Collection*/
+    public function editCollections(Request $request, Product $product)
+    {
+        foreach ($request->collections as $key1=>$newCollectionId) {
+            $alreadyExists = false;
+
+            foreach($product->collections as $key2=>$oldCollection) {
+                if($newCollectionId == $oldCollection->id) {
+                    $alreadyExists = true;
+                }
+            }
+
+            if(!$alreadyExists) {
+                $this->createCollectionLinks($product, $newCollectionId);
+            }
+        }
+
+        return back()->with("success", "Collections successfully updated");
+    }
+
 
 
 
