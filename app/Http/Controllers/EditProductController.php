@@ -151,6 +151,20 @@ class EditProductController extends Controller
             }
         }
 
+        foreach ($product->collections as $key3=>$oldCollection) {
+            $toBeDeleted = true;
+
+            foreach($request->collections as $key4=>$newCollectionId) {
+                if($oldCollection->id == $newCollectionId) {
+                    $toBeDeleted = false;
+                }
+            }
+
+            if($toBeDeleted) {
+                $this->destroyCollectionLinks($product, $oldCollection->id);
+            }
+        }
+        
         return back()->with("success", "Collections successfully updated");
     }
 
@@ -191,6 +205,11 @@ class EditProductController extends Controller
     private function createCollectionLinks($product, $id)
     {
         $product->collections()->attach($id);
+    }
+
+    private function destroyCollectionLinks($product, $id)
+    {
+        $product->collections()->detach($id);
     }
 
     private function createFaqLinks($product, $id)
