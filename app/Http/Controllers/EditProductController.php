@@ -137,30 +137,36 @@ class EditProductController extends Controller
     /*Collection*/
     public function editCollections(Request $request, Product $product)
     {
-        foreach ($request->collections as $key1=>$newCollectionId) {
-            $alreadyExists = false;
+        if($request->collections) {
+            foreach ($request->collections as $key1=>$newCollectionId) {
+                $alreadyExists = false;
 
-            foreach($product->collections as $key2=>$oldCollection) {
-                if($newCollectionId == $oldCollection->id) {
-                    $alreadyExists = true;
+                foreach($product->collections as $key2=>$oldCollection) {
+                    if($newCollectionId == $oldCollection->id) {
+                        $alreadyExists = true;
+                    }
+                }
+
+                if(!$alreadyExists) {
+                    $this->createCollectionLinks($product, $newCollectionId);
                 }
             }
 
-            if(!$alreadyExists) {
-                $this->createCollectionLinks($product, $newCollectionId);
-            }
-        }
+            foreach ($product->collections as $key3=>$oldCollection) {
+                $toBeDeleted = true;
 
-        foreach ($product->collections as $key3=>$oldCollection) {
-            $toBeDeleted = true;
+                foreach($request->collections as $key4=>$newCollectionId) {
+                    if($oldCollection->id == $newCollectionId) {
+                        $toBeDeleted = false;
+                    }
+                }
 
-            foreach($request->collections as $key4=>$newCollectionId) {
-                if($oldCollection->id == $newCollectionId) {
-                    $toBeDeleted = false;
+                if($toBeDeleted) {
+                    $this->destroyCollectionLinks($product, $oldCollection->id);
                 }
             }
-
-            if($toBeDeleted) {
+        } else {
+            foreach ($product->collections as $key3=>$oldCollection) {
                 $this->destroyCollectionLinks($product, $oldCollection->id);
             }
         }
