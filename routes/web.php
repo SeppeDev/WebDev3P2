@@ -76,6 +76,8 @@ Route::delete("/admin/dashboard/deleteimage/{picture}", "EditProductController@d
 
 Route::post("/admin/dashboard/editCollections/{product}", "EditProductController@editCollections")->middleware("auth");
 
+Route::post("/admin/dashboard/editFaqs/{product}", "EditProductController@editFaqs")->middleware("auth");
+
 
 Route::get("/admin/dashboard/newproduct", "NewProductController@index")->middleware("auth");
 Route::post("/admin/dashboard/newproduct", "NewProductController@store")->middleware("auth");

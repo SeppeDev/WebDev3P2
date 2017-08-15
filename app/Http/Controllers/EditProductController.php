@@ -174,6 +174,46 @@ class EditProductController extends Controller
         return back()->with("success", "Collections successfully updated");
     }
 
+    /*FAQ*/
+    public function editFaqs(Request $request, Product $product)
+    {
+        if($request->faqs) {
+            foreach ($request->faqs as $key1=>$newFaqId) {
+                $alreadyExists = false;
+
+                foreach($product->faqs as $key2=>$oldFaq) {
+                    if($newFaqId == $oldFaq->id) {
+                        $alreadyExists = true;
+                    }
+                }
+
+                if(!$alreadyExists) {
+                    $this->createFaqLinks($product, $newFaqId);
+                }
+            }
+
+            foreach ($product->faqs as $key3=>$oldFaq) {
+                $toBeDeleted = true;
+
+                foreach($request->faqs as $key4=>$newFaqId) {
+                    if($oldFaq->id == $newFaqId) {
+                        $toBeDeleted = false;
+                    }
+                }
+
+                if($toBeDeleted) {
+                    $this->destroyFaqLinks($product, $oldFaq->id);
+                }
+            }
+        } else {
+            foreach ($product->faqs as $key3=>$oldFaq) {
+                $this->destroyFaqLinks($product, $oldFaq->id);
+            }
+        }
+        
+        return back()->with("success", "Faqs successfully updated");
+    }
+
 
 
 
@@ -221,5 +261,10 @@ class EditProductController extends Controller
     private function createFaqLinks($product, $id)
     {
         $product->faqs()->attach($id);
+    }
+
+    private function destroyFaqLinks($product, $id)
+    {
+        $product->faqs()->detach($id);
     }
 }

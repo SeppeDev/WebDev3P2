@@ -323,16 +323,30 @@
                 <!-- FAQ -->      
                 <div class="card">
                     <div class="card-content">
-                        <h3>FAQS</h3>
+                        <form action="{{ url( '/admin/dashboard/editFaqs' ) . '/' . $product->id }}" method="POST">
+                            <h3>FAQS</h3>
 
-                        <div class="row"> 
-                            @foreach ($faqs as $faq)
-                                <div class="input-field col l6">
-                                    <input name="faqs[{{$faq->id}}]" type="checkbox" id="faqs{{$faq->id}}"/>
-                                    <label for="faqs{{$faq->id}}">{{$faq->question}}</label>
-                                </div>
-                            @endforeach
-                        </div>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                            <div class="row">
+                                @foreach ($faqs as $faq)
+                                    <div class="input-field col l6">
+                                        <input name="faqs[]" type="checkbox" id="faqs{{$faq->id}}" value="{{$faq->id}}"
+                                            @foreach ($product->faqs as $productFaq)
+                                                @if($productFaq->id == $faq->id)
+                                                    checked
+                                                @endif
+                                            @endforeach
+                                            />
+                                        <label for="faqs{{$faq->id}}">{{$faq->question}}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <div class="input-field col l12">
+                                <input type="submit" value="Create">
+                            </div>
+                        </form>
                     </div>
                 </div>
                 
