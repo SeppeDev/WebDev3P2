@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="/css/nouislider.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <!-- BOOTSTRAP <link href="/css/app.css" rel="stylesheet"> -->
 
@@ -41,13 +42,15 @@
     </div>
 
     <!-- Scripts -->
+    <script src="/js/wNumb.js"></script>
+    <script src="/js/nouislider.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/scripts.js"></script>
     <!-- <script src="/js/paginate.js"></script> -->
     <script src="//code.jquery.com/jquery-1.12.3.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <script src="https://use.fontawesome.com/bbc1396a75.js"></script>
 </body>
 </html>
