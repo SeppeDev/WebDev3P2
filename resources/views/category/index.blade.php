@@ -103,6 +103,13 @@
                                         @endforeach
                                     </div>
 
+                                    <div class="row">
+                                        <h3>Price range</h3>
+
+                                        <div class="col l6">
+                                            <div id="test-slider"></div>
+                                        </div>
+                                    </div>
 
 
 
