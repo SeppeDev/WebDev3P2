@@ -406,6 +406,30 @@ a:hover {
 	}
 }
 
+.filter {
+        .collapsible {
+            border: none;
+            box-shadow: none;
+
+            li {
+                background-color: transparent;
+            
+                .collapsible-header {
+                    background-color: transparent;
+                    color: $white;
+                    border: none;
+                    padding: 15px 20px;
+                }
+                .collapsible-body {
+                    background-color: transparent;
+                    color: $white;
+                    border: none;
+                    padding: 0 20px 15px 40px;
+                }
+            }
+        }
+    }
+
     /* Card */
 .card {
     background-color: $dark-medium-grey !important;

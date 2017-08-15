@@ -88,8 +88,30 @@
                     <h1 class="title_1">{{$category->name}} articles</h1>
                 </div>
 
-                <div class="row">
-                    <h2>Filter</h2>
+                <div class="row filter">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li class="hoverable">
+                            <h2 class="collapsible-header">Filter</h2>
+                            <div class="collapsible-body">
+                                <form>
+                                    <div class="row">
+                                        <h3>By collection</h3>
+
+                                        @foreach ($collections as $collection)
+                                            <input name="collections[]" type="checkbox" id="collections{{$collection->id}}" value="{{$collection->id}}" checked/>
+                                            <label for="collections{{$collection->id}}">{{$collection->name}}</label>
+                                        @endforeach
+                                    </div>
+
+
+
+
+                                    
+                                    
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="row">

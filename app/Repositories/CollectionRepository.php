@@ -16,6 +16,11 @@ class CollectionRepository
         return Collection::Paginate(5);
     }
 
+    public function allWithoutPagination()
+    {
+        return Collection::Paginate(5);
+    }
+
     public function byId($id)
     {
         return Collection::where("id", $id)
