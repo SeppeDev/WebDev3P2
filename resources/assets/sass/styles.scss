@@ -336,6 +336,36 @@ a:hover {
     &_collection{
         margin-left: 10px;
     }
+
+    &_category{
+        padding-left: 16px;
+    }
+
+    &_color{
+        position: absolute;
+        float: left;
+        top: 5px;
+        left: 4px;
+        border-radius: 100%;
+        width: 9px;
+        height: 9px;
+
+        &-1{
+            background-color: $pink;
+        }
+        &-2{
+            background-color: $purple;
+        }
+        &-3{
+            background-color: $yellow;
+        }
+        &-4{
+            background-color: $green;
+        }
+        &-5{
+            background-color: $blue;
+        }
+    }
 }
 
 

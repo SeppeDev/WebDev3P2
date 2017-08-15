@@ -74,6 +74,10 @@ Route::delete("/admin/dashboard/deletecolor/{color}", "EditProductController@del
 Route::post("/admin/dashboard/newimage/{product}", "EditProductController@storeNewImage")->middleware("auth");
 Route::delete("/admin/dashboard/deleteimage/{picture}", "EditProductController@deleteImage")->middleware("auth");
 
+Route::post("/admin/dashboard/editCollections/{product}", "EditProductController@editCollections")->middleware("auth");
+
+Route::post("/admin/dashboard/editFaqs/{product}", "EditProductController@editFaqs")->middleware("auth");
+
 
 Route::get("/admin/dashboard/newproduct", "NewProductController@index")->middleware("auth");
 Route::post("/admin/dashboard/newproduct", "NewProductController@store")->middleware("auth");
