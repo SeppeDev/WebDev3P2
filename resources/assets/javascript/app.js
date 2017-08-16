@@ -34,7 +34,15 @@ $(document).ready(function(){
     ];
 
     // When the slider value changes, update the input and span
-    range.noUiSlider.on('update', function( values, handle ) {
-        valuesDivs[handle].innerHTML = values[handle];
+    slider.noUiSlider.on('update', function( values, handle ) {
+        valuesDivs[handle].value = values[handle];
+    });
+
+    // When the inputfield value changes, update the slider
+    $('#min-price').on('input', function(){
+        slider.noUiSlider.set([document.getElementById('min-price').value, null]);
+    });
+    $('#max-price').on('input', function(){
+        slider.noUiSlider.set([null, document.getElementById('max-price').value]);
     });
 });

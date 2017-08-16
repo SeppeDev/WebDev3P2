@@ -109,12 +109,26 @@
                                         <div class="col l6">
                                             <div id="test-slider"></div>
                                         </div>
+                                        <div class="col l6">
+                                            <div class="row">
+                                                <div class="col l5 push-l1">
+                                                    <input name="min-price" id="min-price" type="number" class="validate">
+                                                    <label for="min-price">€</label>
+                                                </div>
+                                                <div class="col l1 push-l1">
+                                                    <span>-</span>
+                                                </div>
+                                                <div class="col l5 push-l1">
+                                                    <input name="max-price" id="max-price" type="number" class="validate">
+                                                    <label for="max-price">€</label>
+                                                </div>
+                                            </div>   
+                                        </div>
                                     </div>
 
-
-
-                                    
-                                    
+                                    <div class="input-field row">
+                                        <input type="submit" value="Filter">
+                                    </div> 
                                 </form>
                             </div>
                         </li>
