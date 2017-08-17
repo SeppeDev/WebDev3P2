@@ -43,6 +43,8 @@ $(document).ready(function(){
         slider.noUiSlider.set([document.getElementById('min-price').value, null]);
     });
     $('#max-price').on('input', function(){
-        slider.noUiSlider.set([null, document.getElementById('max-price').value]);
+        if(parseInt(document.getElementById('max-price').value) > parseInt(document.getElementById('min-price').value)){
+            slider.noUiSlider.set([null, document.getElementById('max-price').value]);
+        }
     });
 });
