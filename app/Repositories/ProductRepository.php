@@ -35,9 +35,19 @@ class ProductRepository
         return Product::Paginate(5);
     }
 
+    public function filter($collections, $price, $category)
+    {
+        return Product::whereBetween('price', [$price[0], $price[1]])
+                        ->where('category_id', $category)
+                        ->whereHas("collections", function($query) use ($collections){
+                                return $query->whereIn("collections.id", $collections);
+                            })
+                        ->get();
+    }
+
     public function search($value, $price, $categories)
     {
-        return Product::whereBetween('price', [50, 60])
+        return Product::whereBetween('price', [$price[0], $price[1]])
                         ->whereIn('category_id', $categories)
                         ->where("name", 'like', '%'.$value.'%')
                         ->orWhere("description", 'like', '%'.$value.'%')

@@ -93,10 +93,11 @@
                         <li class="hoverable">
                             <h2 class="collapsible-header">Filter</h2>
                             <div class="collapsible-body">
-                                <form>
+                                <form action="{{ url( App::getLocale() . '/category/'.$category->id.'/filter' ) }}" method="POST">
                                     <div class="row">
                                         <h3>By collection</h3>
 
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         @foreach ($collections as $collection)
                                             <input name="collections[]" type="checkbox" id="collections{{$collection->id}}" value="{{$collection->id}}" checked/>
                                             <label for="collections{{$collection->id}}">{{$collection->name}}</label>

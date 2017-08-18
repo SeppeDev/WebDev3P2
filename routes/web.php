@@ -33,14 +33,18 @@ Route::group(['prefix' => Config::get('app.locale_prefix')], function()
     Route::get("/", "HomeController@index");
 
     Route::get("/category/{id}", "CategoryController@index");
+    Route::get("/category/{id}/filter", "CategoryController@index");
+    Route::post("/category/{id}/filter", "CategoryController@filter");
 
     Route::get("/product/{id}", "ProductController@index");
 
 
     Route::get("search", "SearchController@index");
+    Route::get("/search/search", "SearchController@index");
     Route::post("/search/search", "SearchController@search");
 
     Route::get("/faq", "FaqController@index");
+    Route::get("/faq/search", "FaqController@index");
     Route::post("/faq/search", "FaqController@search");
 
     Route::get("/about", "AboutController@index");
