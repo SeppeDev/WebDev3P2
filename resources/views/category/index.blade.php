@@ -91,7 +91,7 @@
                 <div class="row filter">
                     <ul class="collapsible" data-collapsible="accordion">
                         <li class="hoverable">
-                            <h2 class="collapsible-header">Filter</h2>
+                            <h2 class="collapsible-header">Filter <i class="fa fa-angle-down" aria-hidden="true"></i></h2>
                             <div class="collapsible-body">
                                 <form action="{{ url( App::getLocale() . '/category/'.$category->id.'/filter' ) }}" method="POST">
                                     <div class="row">

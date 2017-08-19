@@ -72,12 +72,14 @@
                     <form action="{{ url( App::getLocale() . '/search/search' ) }}" method="POST" class="col s12">                    
                         <div class="row">
                             <div class="col l11">
-                                <div class="row filter">
+                                <div class="row advanced-search">
                                     <ul class="collapsible" data-collapsible="accordion">
                                         <li class="hoverable">
-                                            <h2 class="collapsible-header">Filter</h2>
+                                            <h2 class="collapsible-header">Advanced filter <i class="fa fa-angle-down" aria-hidden="true"></i></h2>
+                                            
                                             <div class="collapsible-body">
-                                                    <div class="row">
+                                                <div class="row">
+                                                    <div class="col l6">
                                                         <h3>Category</h3>
 
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -87,32 +89,44 @@
                                                         @endforeach
                                                     </div>
 
-                                                    <div class="row">
-                                                        <h3>Price range</h3>
+                                                    <div class="col l6">
+                                                        <div class="row">
+                                                            <h3>Price range</h3>
+                                                        </div>
 
-                                                        <div class="col l6">
-                                                            <div id="test-slider"></div>
+                                                        <div class="row">
+                                                            <div class="col l11">
+                                                                <div id="test-slider"></div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col l6">
-                                                            <div class="row">
-                                                                <div class="col l5 push-l1">
-                                                                    <input name="min-price" id="min-price" type="number" class="validate">
-                                                                    <label for="min-price">€</label>
-                                                                </div>
-                                                                <div class="col l1 push-l1">
-                                                                    <span>-</span>
-                                                                </div>
-                                                                <div class="col l5 push-l1">
-                                                                    <input name="max-price" id="max-price" type="number" class="validate">
-                                                                    <label for="max-price">€</label>
-                                                                </div>
-                                                            </div>   
-                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col l1">
+                                                                <label for="min-price">€</label>
+                                                            </div>
+                                                            <div class="col l4">
+                                                                <input name="min-price" id="min-price" type="number" class="validate">
+                                                            </div>
+
+                                                            <div class="col l1">
+                                                                <span>-</span>
+                                                            </div>
+
+                                                            <div class="col l1">
+                                                                <label for="max-price">€</label>
+                                                            </div>
+                                                            <div class="col l4">
+                                                                <input name="max-price" id="max-price" type="number" class="validate">
+                                                            </div>
+                                                        </div>  
                                                     </div>
+                                                </div>
 
-                                                    <div class="input-field row">
+                                                <div class="row">
+                                                    <div class="input-field">
                                                         <input type="submit" value="Filter">
-                                                    </div> 
+                                                    </div>
+                                                </div> 
                                             </div>
                                         </li>
                                     </ul>

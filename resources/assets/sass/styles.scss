@@ -488,6 +488,41 @@ a:hover {
                 }
             }
         }
+
+        label{
+            margin-right: 50px;
+        }
+    }
+
+    .advanced-search {
+        .collapsible {
+            border: none;
+            box-shadow: none;
+
+            li {
+                background-color: transparent;
+            
+                .collapsible-header {
+                    background-color: transparent;
+                    border: none;
+                    padding: 15px 20px;
+                }
+                .collapsible-body {
+                    background-color: transparent;
+                    border: none;
+                    padding: 0 20px 15px 40px;
+                }
+            }
+        }
+
+        label{
+            margin-right: 50px;
+        }
+
+        [type="submit"]{
+            font-size: 14px !important;
+            height: auto !important;
+        }
     }
 
     /* HotItem */
@@ -571,23 +606,27 @@ a:hover {
             color: $pink !important;
         }
     }
+}
 
-    [type="checkbox"]:checked+label:before {
-        border-right: 2px solid $pink;
-        border-bottom: 2px solid $pink;
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid $pink;
+    border-bottom: 2px solid $pink;
+}
+
+.btn {
+    background-color: $pink;
+    color: $black;
+
+    &.delete {
+        background-color: $red;
     }
-
-    .btn {
-        background-color: $pink;
-        color: $black;
-
-        &.delete {
-            background-color: $red;
-        }
-        &.edit {
-            background-color: $green;
-        }
+    &.edit {
+        background-color: $green;
     }
+}
+
+.noUi-connect {
+    background-color: $pink !important;
 }
 
 .caret {
@@ -680,6 +719,7 @@ input[type="submit"] {
 
     .info {
         color: $white;
+        padding-left: 2rem;
 
         .colors {
             height: 20px;

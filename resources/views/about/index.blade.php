@@ -132,7 +132,7 @@
                         <ul class="collapsible" data-collapsible="expandable">
                             @foreach ($faqs as $faq)
                                 <li class=" active hoverable">
-                                    <h3 class="collapsible-header">{{$faq->question}}</h3>
+                                    <h3 class="collapsible-header">{{$faq->question}} <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
                                     <p class="collapsible-body">{{$faq->awnser}}</p>
                                 </li>
                             @endforeach

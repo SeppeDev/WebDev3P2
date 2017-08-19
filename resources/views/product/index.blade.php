@@ -100,18 +100,14 @@
                         </div>
                         <div class="col l6 info">
                             <div>
-                                <div class="row">
-                                    <div class="col l12">
-                                        <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
-                                        <a href="{{ url( App::getLocale() . '/category/' . $product->category->id ) }}" class="breadcrumb breadcrumb_category"><span class="breadcrumb_color breadcrumb_color-{{$product->category->id}}"></span>{{$product->category->name}}</a>
-                                        @foreach($product->collections as $collection)
-                                            <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb breadcrumb_collection">{{$collection->name}}</a>
-                                        @endforeach
-                                    </div>
-                                </div>
+                                <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
+                                <a href="{{ url( App::getLocale() . '/category/' . $product->category->id ) }}" class="breadcrumb breadcrumb_category"><span class="breadcrumb_color breadcrumb_color-{{$product->category->id}}"></span>{{$product->category->name}}</a>
+                                @foreach($product->collections as $collection)
+                                    <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb breadcrumb_collection">{{$collection->name}}</a>
+                                @endforeach
 
                                 <h1 class="title_1">{{$product->name}}</h1>
-                                <h2>€{{$product->price}}</h2>
+                                <h2 class="title_5">€ {{$product->price}}</h2>
                                 <h3>Colors</h3>
                                 <div class="colors">
                                     @foreach ($product->colors as $color)
@@ -128,28 +124,29 @@
                     
                 </div>
 
-                <div class="row specifications">
+                <div class="row specifications mar-btm-l">
                     <div class="col l12">
-                        <h3>Specifications</h3>
+                        <h3 class="title_5">Specifications</h3>
                         <h4>Dimensions</h4>
-                        <p class="mar-left-m">
+                        <p class="mar-left-l">
                             @foreach ($product->sizes as $size)
-                                {{$size->name}} - {{$size->length}} x {{$size->width}} x
+                                {{$size->name}} - {{$size->length}} x {{$size->width}}
                                 @if ($size->height)
-                                    {{$size->height}}cm
+                                    x {{$size->height}}
                                 @endif
+                                cm
                                 </br>
                             @endforeach
                         </p>
                         <h4>Technical info</h4>
-                        <p class="mar-left-m">
+                        <p class="mar-left-l">
                             {{$product->technical_description}}
                         </p>
                     </div>
                 </div>
 
                 <div class="row related-products">
-                    <h2>Related products</h2>
+                    <h2 class="title_5">Related products</h2>
                     <div class="row">
                         @foreach ($collections as $collection)
                             @foreach ($collection->products as $theProduct)
@@ -179,15 +176,19 @@
                     </div>
                 </div>
                 <div class="row faq">
-                    <h2>Frequently asked questions</h2>
-                    <ul class="collapsible" data-collapsible="accordion">
-                        @foreach ($product->faqs as $faq)
-                            <li class="hoverable">
-                                <h3 class="collapsible-header">{{$faq->question}}</h3>
-                                <p class="collapsible-body">{{$faq->awnser}}</p>
-                            </li>
-                        @endforeach
-                    </ul>
+                    <h2 class="title_5">Frequently asked questions</h2>
+                        @if(count($product->faqs) > 0)
+                            <ul class="collapsible" data-collapsible="accordion">
+                                @foreach ($product->faqs as $faq)
+                                    <li class="hoverable">
+                                        <h3 class="collapsible-header">{{$faq->question}} <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
+                                        <p class="collapsible-body">{{$faq->awnser}}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p>There are no frequently asked questions directly related to this product.</p>
+                        @endif
                     <div class="right"><a href="{{url( 'faq' )}}">more questions?</a></div>
                 </div>
 
@@ -196,7 +197,7 @@
                         <img src="{{ url( '/img/patern.jpg' ) }}">
                         <div class="image-content">
                             <h2 class="center">Discover amazing Kowloon deals!</h2>
-                            <h3 class="center">Only in our newsletter</h3>
+                            <h4 class="center">Only in our newsletter</h4>
                         </div>
                     </div>
                     <div class="col l5 email-content">
@@ -213,7 +214,7 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="input-field col s2">
-                                        <input type="submit" value="Ok">
+                                        <input type="submit" value="OK">
                                     </div>
                                 </div>
                             </form>
