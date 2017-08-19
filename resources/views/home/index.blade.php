@@ -136,7 +136,7 @@
                         <img src="{{ url( 'img/Patern.jpg' ) }}">
                         <div class="image-content">
                             <h2 class="center">@lang("home.discover")</h2>
-                            <h3 class="center">@lang("home.only newsletter")</h3>
+                            <h4 class="center">@lang("home.only newsletter")</h4>
                         </div>
                     </div>
                     <div class="col l5 email-content">
@@ -153,7 +153,7 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="input-field col s2">
-                                        <input type="submit" value="Ok">
+                                        <input type="submit" value="OK">
                                     </div>
                                 </div>
                             </form>

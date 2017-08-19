@@ -258,6 +258,14 @@ a:hover {
     margin: 0 auto;
 }
 
+/* Cookie */
+.cookie-consent{
+    color: $dark-black;
+    background-color: $yellow;
+    height: 50px;
+    padding: 0 100px;
+}
+
 /* Navbar */
 .nav-wrapper {
     background-color: $pink;
@@ -619,11 +627,13 @@ input[type="submit"] {
             left: 50%;
 
             h2 {
+                font-family: Choplin-Medium;
                 position: relative;
                 left: -50%;
             }
 
-            h3 {
+            h4 {
+                font-family: Choplin-Medium;
                 position: relative;
                 left: -50%;
 
@@ -638,7 +648,9 @@ input[type="submit"] {
         background-color: $dark-medium-grey;
 
         input[type="submit"] {
-            background-color: $dark-black;
+            font-family: Choplin-Medium;
+            color: $white;
+            background-color: transparent;//$dark-black;
             border: none;
             padding: 4px 7px;
         }
