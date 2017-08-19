@@ -68,30 +68,74 @@
                     <!-- Display Validation Errors -->
                     @include('common.errors')
                     @include('common.success')
-                    
-                    <div class="row">
-                        <div class="col l11">
-                            <h2 class="title_3">Advanced Filter</h2>
-                        </div>
 
-                        <div class="col l1 right">
-                            <a class="exit" href="{{ url( App::getLocale() . '/' ) }}">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <form action="{{ url( App::getLocale() . '/search/search' ) }}" method="POST" class="col s12">                    
+                        <div class="row">
+                            <div class="col l11">
+                                <div class="row filter">
+                                    <ul class="collapsible" data-collapsible="accordion">
+                                        <li class="hoverable">
+                                            <h2 class="collapsible-header">Filter</h2>
+                                            <div class="collapsible-body">
+                                                    <div class="row">
+                                                        <h3>Category</h3>
 
-                    <div class="row mar-top-xl">
-                        <form action="{{ url( App::getLocale() . '/search/search' ) }}" method="POST" class="col s12">
-                            <div class="row">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="input-field col s12">
-                                    <input name ="search" id="search" type="text" value="{{$search}}">
-                                    <label for="search" class="title_4"><i class="fa fa-search" aria-hidden="true"></i> Just start typing and hit <i class="fa fa-arrow-left" aria-hidden="true"></i> to search </label>
+                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                        @foreach ($categories as $category)
+                                                            <input name="categories[]" type="checkbox" id="categories{{$category->id}}" value="{{$category->id}}" checked/>
+                                                            <label for="categories{{$category->id}}">{{$category->name}}</label>
+                                                        @endforeach
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <h3>Price range</h3>
+
+                                                        <div class="col l6">
+                                                            <div id="test-slider"></div>
+                                                        </div>
+                                                        <div class="col l6">
+                                                            <div class="row">
+                                                                <div class="col l5 push-l1">
+                                                                    <input name="min-price" id="min-price" type="number" class="validate">
+                                                                    <label for="min-price">€</label>
+                                                                </div>
+                                                                <div class="col l1 push-l1">
+                                                                    <span>-</span>
+                                                                </div>
+                                                                <div class="col l5 push-l1">
+                                                                    <input name="max-price" id="max-price" type="number" class="validate">
+                                                                    <label for="max-price">€</label>
+                                                                </div>
+                                                            </div>   
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="input-field row">
+                                                        <input type="submit" value="Filter">
+                                                    </div> 
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+
+                            <div class="col l1 right">
+                                <a class="exit" href="{{ url( App::getLocale() . '/' ) }}">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row mar-top-xl">
+                                <div class="row">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="input-field col s12">
+                                        <input name ="search" id="search" type="text" value="{{$search}}">
+                                        <label for="search" class="title_4"><i class="fa fa-search" aria-hidden="true"></i> Just start typing and hit <i class="fa fa-arrow-left" aria-hidden="true"></i> to search </label>
+                                    </div>
+                                </div>
+                        </div>
+                    </form>
 
                     <div class="row">
                         <p>

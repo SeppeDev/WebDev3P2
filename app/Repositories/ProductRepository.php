@@ -49,9 +49,11 @@ class ProductRepository
     {
         return Product::whereBetween('price', [$price[0], $price[1]])
                         ->whereIn('category_id', $categories)
-                        ->where("name", 'like', '%'.$value.'%')
-                        ->orWhere("description", 'like', '%'.$value.'%')
-                        ->orWhere("technical_description", 'like', '%'.$value.'%')
+                        ->where(function($query) use ($value){
+                            $query->where("name", 'like', '%'.$value.'%');
+                            $query->orWhere("description", 'like', '%'.$value.'%');
+                            $query->orWhere("technical_description", 'like', '%'.$value.'%');
+                        })
                         ->Paginate(5);
     }
 }

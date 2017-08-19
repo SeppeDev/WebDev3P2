@@ -7,32 +7,36 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Repositories\ProductRepository;
+use App\Repositories\CategoryRepository;
 
 class SearchController extends Controller
 {
     protected $products;
+    protected $categories;
 
-    public function __construct(ProductRepository $products)
+    public function __construct(ProductRepository $products, CategoryRepository $categories)
     {
         $this->products = $products;
+        $this->categories = $categories;
     }
 
     public function index(Request $request)
     {
         return view('search/index', [
             "products" => $this->products->allPaged(),
+            "categories" => $this->categories->all(),
             "search" => "",
         ]);
     }
 
     public function search(Request $request)
     {
-        $price = [50, 60];
-        $categories = [1, 2, 3, 4, 5];
-
-        return view('search/index', [
-            "products" => $this->products->search($request->search, $price, $categories),
-            "search" => $request->search,
-        ]);
+        if(count($request->categories) > 0) {
+            return view('search/index', [
+                "products" => $this->products->search($request->search, [$request->get('min-price'), $request->get('max-price')], $request->categories),
+                "categories" => $this->categories->all(),
+                "search" => $request->search
+            ]);
+        }
     }
 }
