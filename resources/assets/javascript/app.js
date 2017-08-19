@@ -1,7 +1,11 @@
 $(document).ready(function(){
-    console.log("gg");
 
-    $('.carousel.carousel-slider').carousel({full_width: true});
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    autoplay()   
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 5000);
+    }
 
     $('.sidebar-nav > li.category').hover(
         function(){ $(this).removeClass('white-animals') },
