@@ -618,6 +618,10 @@ a:hover {
     color: $black;
     border-radius: 0;
 
+    &:hover{
+        background-color: $pink !important;
+    }
+
     &_create{
         margin-right: 10px;
     }

@@ -189,12 +189,12 @@
                         @else
                             <p>There are no frequently asked questions directly related to this product.</p>
                         @endif
-                    <div class="right"><a href="{{url( 'faq' )}}">more questions?</a></div>
+                    <div class="right"><a href="{{url( App::getLocale() . '/faq' )}}">more questions?</a></div>
                 </div>
 
                 <div class="row newsletter">
                     <div class="col l7">
-                        <img src="{{ url( '/img/patern.jpg' ) }}">
+                        <img src="{{ url( '/img/Patern.jpg' ) }}">
                         <div class="image-content">
                             <h2 class="center">Discover amazing Kowloon deals!</h2>
                             <h4 class="center">Only in our newsletter</h4>

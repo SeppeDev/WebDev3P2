@@ -47,7 +47,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/scripts.js"></script>
     <!-- <script src="/js/paginate.js"></script> -->
-    <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
