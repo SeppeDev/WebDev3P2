@@ -393,6 +393,58 @@ a:hover {
     a {
         color: $dark-light-grey;
     }
+
+    &:hover{
+        ._1 {   //Dogs
+            @extend .animal;
+            height: 64px;
+            width: 59px;
+            background-position: 0px -125px;
+        
+            display: block;
+            margin: 0 auto;
+        }
+        
+        ._2 {   //Cats
+            @extend .animal;
+            height: 61px;
+            width: 53px;
+            background-position: -70px -125px;
+        
+            display: block;
+            margin: 0 auto;
+        }
+        
+        ._3 {   //Fish
+            @extend .animal;
+            height: 58px;
+            width: 58px;
+            background-position: -140px -125px;
+        
+            display: block;
+            margin: 0 auto;
+        }
+        
+        ._4 {   //Birds
+            @extend .animal;
+            height: 67px;
+            width: 40px;
+            background-position: -210px -125px;
+        
+            display: block;
+            margin: 0 auto;
+        }
+        
+        ._5 {   //Small Animals
+            @extend .animal;
+            height: 51px;
+            width: 47px;
+            background-position: -280px -125px;
+        
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }
 
 .image-container {
@@ -430,10 +482,54 @@ a:hover {
         }
     }
 
+    /* HotItem */
+    .card{
+
+        .after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            text-align: center;
+
+            &.bg_1{
+                background-color: transparentize($pink, 0.2);
+            }
+            &.bg_2{
+                background-color: transparentize($purple, 0.2);
+            }
+            &.bg_3{
+                background-color: transparentize($yellow, 0.2);
+            }
+            &.bg_4{
+                background-color: transparentize($green, 0.2);
+            }
+            &.bg_5{
+                background-color: transparentize($blue, 0.2);
+            }
+
+            i{
+                font-size: 5rem;
+                padding-top: 75px;
+            }
+        }
+
+        &.hoverable:hover{
+            position: relative;
+
+            .after{
+                display: block;
+            }
+        }
+    }
+
     /* Card */
 .card {
     background-color: $dark-medium-grey !important;
     color: $white !important;
+    padding: 5px;
 
     div {
         color: $white;
@@ -453,6 +549,10 @@ a:hover {
             height: 15px;
             margin-right: 5px;
         }
+    }
+    &-image{
+        height: 200px;
+        overflow: hidden;
     }
 
     input:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {

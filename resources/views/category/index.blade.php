@@ -150,6 +150,7 @@
                                                 </div>
                                                 @endforeach
                                             </div>
+                                            <div class="after bg_{{$product->category_id}}"><i class="fa fa-indent" aria-hidden="true"></i></div>
                                         </div>
                                         <div class="card-content row">
                                             <div class="col l8">{{$product->name}}</div>

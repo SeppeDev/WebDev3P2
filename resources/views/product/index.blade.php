@@ -103,7 +103,7 @@
                                 <div class="row">
                                     <div class="col l12">
                                         <a href="{{ url( App::getLocale() . '/' ) }}" class="breadcrumb breadcrumb_K">K</a>
-                                        <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb breadcrumb_category"><span class="breadcrumb_color breadcrumb_color-{{$product->category->id}}"></span>{{$product->category->name}}</a>
+                                        <a href="{{ url( App::getLocale() . '/category/' . $product->category->id ) }}" class="breadcrumb breadcrumb_category"><span class="breadcrumb_color breadcrumb_color-{{$product->category->id}}"></span>{{$product->category->name}}</a>
                                         @foreach($product->collections as $collection)
                                             <a href="{{ url( App::getLocale() . '/product/' . $product->id ) }}" class="breadcrumb breadcrumb_collection">{{$collection->name}}</a>
                                         @endforeach
@@ -165,6 +165,7 @@
                                                     </div>
                                                     @endforeach
                                                 </div>
+                                                <div class="after bg_{{$theProduct->category_id}}"><i class="fa fa-indent" aria-hidden="true"></i></div>
                                             </div>
                                             <div class="card-content row">
                                                 <div class="col l8">{{$theProduct->name}}</div>

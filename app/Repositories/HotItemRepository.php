@@ -14,7 +14,7 @@ class HotItemRepository
     public function all()
     {
         return HotItem::with(array("product"=>function($query){
-                            $query->select("id", "name", "price");
+                            $query->select("id", "name", "price", "category_id");
                             $query->with("pictures", "colors");
                         }))
                     ->orderBy('position', 'asc')
