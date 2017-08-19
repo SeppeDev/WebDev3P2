@@ -203,14 +203,16 @@
                         <div class="row">
                             <h1  class="col l6 title_1">Producten</h1>
 
-                            <a href="{{ url('/admin/dashboard/newproduct') }}" class="btn col l2 push-l4">
-                                Create New Product
-                            </a>
+                            <div class="col l2 push-l4">
+                                <a href="{{ url('/admin/dashboard/newproduct') }}" class="btn">
+                                    New Product
+                                </a>
+                            </div>
                             
                             <div class="row">
                                 @foreach ($products as $product)
                                     <div class="col l10">
-                                        <a href="{{url('product') . '/' . $product->id}}"><div class="card horizontal hoverable">
+                                        <a href="{{url( App::getLocale() . '/product') . '/' . $product->id }}"><div class="card horizontal hoverable">
                                             
                                                 <div class="card-image col l3">
                                                     <img src="{{ url( $product->pictures[0]->url ) }}">

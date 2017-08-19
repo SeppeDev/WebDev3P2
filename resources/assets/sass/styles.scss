@@ -25,7 +25,7 @@ $yellow 			: #FFB93F;
 $pink 				: #FF6F9E;
 $green 				: #7BFF81;
 
-$red                : darken(desaturate(#FF2021, 15%), 5%);
+$red                : #BA2828;
 
 
 body {
@@ -616,9 +616,15 @@ a:hover {
 .btn {
     background-color: $pink;
     color: $black;
+    border-radius: 0;
+
+    &_create{
+        margin-right: 10px;
+    }
 
     &.delete {
         background-color: $red;
+        color: $white;
     }
     &.edit {
         background-color: $green;
@@ -1007,6 +1013,32 @@ input[type="submit"] {
         
         .active span {
             background-color: $pink;
+        }
+    }
+}
+
+/* PRODUCT UPDATE */
+.product-update{
+    .collapsible {
+        border: none;
+        box-shadow: none;
+
+        li {
+            background-color: $dark-medium-grey;
+            border: 2px solid $medium-dark-grey;
+        
+            .collapsible-header {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 15px 20px;
+            }
+            .collapsible-body {
+                background-color: $dark-medium-grey;
+                color: $white;
+                border: none;
+                padding: 0 20px 15px 40px;
+            }
         }
     }
 }
